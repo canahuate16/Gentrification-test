@@ -4,7 +4,7 @@ var zipCode = ''
 $(document).ready(function () {
     // Get value on button click and show alert
     $(".submitBtn").click(function(){
-        var str = $("#zipCode").val().trim();
+        var str = $("#search").val().trim();
        zipCode = str
 
         console.log (str)
@@ -50,13 +50,13 @@ $(document).ready(function () {
                     if (response1.data.basicdata[i].zip_code === zipCode) {
                         console.log(response1.data.basicdata[i]['One-Bedroom'] + ' for a 1-Bedroom');
                         //bedroomInput = drop down similar to var Varname = $("#zipCode").val().trim();
-                        if (bedroomInput === 'One-Bedroom') {
-                            //1000 = user input for asking price
-                            if (response1.data.basicdata[i]['One-Bedroom'] > 1000 ) {
-                                //do something/compare
-                            }
+                        // if (bedroomInput === 'One-Bedroom') {
+                        //     //1000 = user input for asking price
+                        //     if (response1.data.basicdata[i]['One-Bedroom'] > 1000 ) {
+                        //         //do something/compare
+                        //     }
                             
-                        }
+                        // }
                         console.log(response1.data.basicdata[i]['Two-Bedroom'] + ' for a 2-Bedroom');
                         console.log(response1.data.basicdata[i]['Three-Bedroom'] + ' for a 3-Bedroom');
                         console.log(response1.data.basicdata[i]['Four-Bedroom'] + ' for a 4-Bedroom');
