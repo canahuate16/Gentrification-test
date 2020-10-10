@@ -8,29 +8,27 @@
          <!-- Compiled and minified CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link rel = "stylesheet"  href= "style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+
     </head>
     <body>
-         <input type="text" id= 'zipCode'>
-         <button id = "searchBtn" class = "submitBtn">Submit</button>
-     <div>
             <header> 
                 <nav>
                     <div class="nav-wrapper">
                       <a href="#!" class="brand-logo">Gentrification sucks</a>
                       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                      <ul class="right hide-on-med-and-down">
-                        <li><a href="home.html">Home</a></li>
+                      <ul class="right hide-on-med-and-down">>
                           <li><a href="Resources-further-reading.html">Resources/Further Reading</a></li>
                           <li><a href="Response.html">response</a></li>
                           <li><a href="Have-a-voice.html">Have a voice!</a></li>
                           <li><a href="success-stories">Success-stories</a></li>
                           <li><a href="Property-owners.html">Property owners working in solidarity with us</a></li>
-                      </ul>
-                    </div>
-                  </nav>
-                
+                        </ul>
+                      </div>
+                    </nav>
+                  
+                   
                   <ul class="sidenav" id="mobile-demo">
-                    <li><a href="home.html">Home</a></li>
                           <li><a href="Resources-further-reading.html">Resources/Further Reading</a></li>
                           <li><a href="Response.html">response</a></li>
                           <li><a href="Have-a-voice.html">Have a voice!</a></li>
@@ -38,41 +36,67 @@
                           <li><a href="Property-owners.html">Property owners working in solidarity with us</a></li>
 
                   </ul>
-
-                    <div class="card-panel teal lighten-2"><h1>I AIN'T AFRAID OF NO YUPPIES!</h1>
-                        <nav>
-                             <div class="nav-wrapper">
-                                 <form>
-                                      <div class="input-field">
-                                         <input id="search" type="search" required>
-                                            <label class="label-icon" for="search"><i class="material-icons">Zip Code</i></label>
-                                                <i class="material-icons">x</i>
-                                         </div>
-                                     </form>
-                             </div>
-                        </nav>
-                    
+                
+                <header>
+                    <div class="card-panel"><h1>I AIN'T AFRAID OF NO YUPPIES!</h1>
                     </div>                   
                 </header>
          
+
            <main>
-                 <div>
-
-                     <p>Content in main is awesome brosef</p>
-
-                </div>
-                   
                 <div class="main-section1">
                   <h3>Why join the fight to protect communities against rising housing costs?</h3>
-                  <p>historically disenfranchised communties are disproportionately affected by rising housing costs, forcing residential and business communities to move by raising rental and tax costs. This tool is designed to calculate cost of living, median income brackets by zipcode and (other factors - historic data?, ...) against the input rental property data to determine how much you should pay in rent in order to work against inflating market prices.</p>
-                </div>
-                
 
-                     <!-- Button to trigger an on click event and run rental calculations -->
-                     <a class="calculateBtn waves-effect waves-light btn">Calculate Fair Rent</a>
+                  <p class="title2">historically disenfranchised communties are disproportionately affected by rising housing costs, forcing residential and business communities to move by raising rental and tax costs. This tool is designed to calculate cost of living, median income brackets by zipcode and (other factors - historic data?, ...) against the input rental property data to determine how much you should pay in rent in order to work against inflating market prices.</p>
+                  <div class="title">
+                    
+                  <h4>Calculate Your Rent</h4>
+                </div>
+                  <p></p>
+                      <form id="form">
+                        <div class="row">
+
+                            <div class="input-field col s12">
+                              <input  id="zipcode-input" type="text" class="validate">
+                              <label class="active" for="zipCode1"><p>Zip Code</p></label>
+                            </div>
+                            <div class="input-field col s12"> 
+                                <select id="bedroom-input">
+                                  <option value="0"></option>
+                                  <option value="Efficiency">Studio</option>
+                                  <option value="One-Bedroom">1 Bedroom</option>
+                                  <option value="Two-Bedroom">2 Bedroom</option>
+                                  <option value="Three-Bedroom">3 Bedroom</option>
+                                  <option value="Four-Bedroom">4 Bedroom</option>
+                                </select>
+                                <label>Number of Bedrooms</label>
+                              </div>
+                            <!-- <div class="input-field col s12">
+                                <select multiple>
+                                  <option value="1">1 Bedroom</option>
+                                  <option value="2">2 Bedroom</option>
+                                  <option value="3">3 Bedroom</option> 
+                                  <option value="4">4 Bedroom</option>
+                                </select>
+                                <label>Prefered number of bedrooms</label> -->
+                            <!-- </div> -->
+
+                            <div class="input-field col s12">
+                                <input  id="price-input" type="text" class="validate">
+                                <label class="active" for="rentRange">Rental asking price</label>
+                              </div>
+                          </div>
+                        <!-- <div id="test-slider"></div> -->
+
+                        <!-- Button to trigger an on click event and run rental calculations -->          
+                        <button type="submit" class="btn waves-effect waves-light">Submit</button>
+
+                        </form>
+                    </div>
+               </div>
                      <div class=row>
                         <!-- Bad Price result Card -->
-                        <div class="card result-bad">
+                        <div class="card result-bad hide">
                           <div class="card-content">
                             <h5>HARD PASS</h5>
                             <p>The rental asking price is ABOVE fair market rent as determined by HUD. If you agree to take this lease, at this price, you will be contributing to the economical impacts of gentrification.
@@ -89,7 +113,7 @@
                      </div>
                      <div class=row>
                             <!-- Fair Price result Card -->
-                            <div class="card result-fair">
+                            <div class="card result-fair hide">
                             <div class="card-content">
                               <h5>CAUTION</h5>
                               <p>The rental asking price is at fair market rent as determined by HUD. If you agree to take this lease, at this price, we encourage you to discuss rental increase terms and histories with your landlord.
@@ -104,7 +128,7 @@
                       </div>
                         <div class=row>
                             <!-- Good Price result Card -->
-                          <div class="card result-good">
+                          <div class="card result-good hide">
                           <div class="card-content">
                             <h5>GO FOR IT!</h5>
                             <p>The rental asking price is below fair market rent as determined by HUD. We recommend that you go ahead and agree to sign!</p>
@@ -121,7 +145,7 @@
 
                       <div class=row>
                         <!-- Good Price result Card -->
-                      <div class="card result-warning" id="air-quality-warning">
+                      <div class="card result-warning hide" id="air-quality-warning">
                       <div class="card-content">
                         <h5>WARNING</h5>
                         <p>A hidden cost in any housing market is health impacts from surrounding environmental factors. We have determined that the air quality in this zipcode is poor. Please take this information to weigh the right decision for your own health needs and as a possible rent negotiation factor.</p>
@@ -147,8 +171,8 @@
                           <ul>
                             <li><a class="grey-text text-lighten-3" href="https://www.governing.com/gov-data/philadelphia-gentrification-maps-demographic-data.html" target="_blank">Philadelphia Gentrification Maps and Data</a></li>
                             <li><a class="yellow-text text-lighten-3" href="https://www.aafp.org/news/blogs/freshperspectives/entry/20180928fp-gentrification.html" target="_blank">Gentrification's Affect on Urban Underpriviliged Communities </a></li>
-                            <li><a class="green-text text-lighten-3" href="https://www.cdc.gov/healthyplaces/healthtopics/gentrification.htm" target="_blank">Gentrification and the effects on the Health of Underpriviliged Communities</a></li>
-                            <li><a class="blue-text text-lighten-3" href="https://scholarship.tricolib.brynmawr.edu/bitstream/handle/10066/21600/2019LukezS.pdf?sequence=1&isAllowed=y" target="_blank">Gentrification and the effects on Philadelphia Public School Education</a></li>
+                            <li><a class="darkgrey-text text-lighten-3" href="https://www.cdc.gov/healthyplaces/healthtopics/gentrification.htm" target="_blank">Gentrification and the effects on the Health of Underpriviliged Communities</a></li>
+                            <li><a class="orange-text text-lighten-3" href="https://scholarship.tricolib.brynmawr.edu/bitstream/handle/10066/21600/2019LukezS.pdf?sequence=1&isAllowed=y" target="_blank">Gentrification and the effects on Philadelphia Public School Education</a></li>
                           </ul>
                         </div>
                       </div>
@@ -163,6 +187,8 @@
             <!-- <script src="script.js" async defer></script> -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-            <script src="script.js"></script>
+            <script src="./script.js"></script>
+            <script src="https://cdn.jsdelivr.net/gh/Dogfalo/materialize@master/extras/noUiSlider/nouislider.min.js"></script>
+            <!-- <script src="./form.js"></script> -->
     </body>
 </html>
